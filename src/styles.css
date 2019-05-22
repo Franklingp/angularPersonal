@@ -1,0 +1,19 @@
+
+@font-face{
+
+	font-family: "goodBrush";
+	src: url("assets/fonts/GoodBrush.ttf");
+
+}
+
+#logo{
+	font-family: goodBrush;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+}
+
+.bg-light {
+    background-color: #E49D36 !important;
+}
