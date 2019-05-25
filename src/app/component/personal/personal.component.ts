@@ -11,22 +11,38 @@ import { Employee } from '../../models/employee';
 export class PersonalComponent implements OnInit {
 	public personal: Employee[];
 
-  constructor(
-  		private _PersonalService: PersonalService
-  	){ }
+  constructor( private _PersonalService: PersonalService ){ }
 
-  ngOnInit() {
 
-  	this._PersonalService.getPersonal().subscribe(
-  		response =>{
-  			console.log(response);
-  		},
-  		error =>{
-  			console.log(<any>error);
-  		}
+  ngOnInit(){
+    this.test();
+    this.home();
+  }
 
-  	);
 
+  test(){
+      this._PersonalService.getTest().subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(<any>error);
+        }
+
+    );
+
+  }
+ 
+
+  home(){
+      this._PersonalService.homeService().subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(<any>error);
+        }
+      );
   }
 
 }
