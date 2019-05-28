@@ -9,31 +9,21 @@ import { Employee } from '../../models/employee';
   providers: [PersonalService]
 })
 export class PersonalComponent implements OnInit {
-	public personal: Employee[];
+	public personal_activo: Employee[];
+  public peticion_succeful: boolean;
 
-  constructor( private _PersonalService: PersonalService ){ }
+  constructor( private _PersonalService: PersonalService ){ 
+    this.peticion_succeful = false;
+  }
 
 
   ngOnInit(){
-    this.test();
     this.home();
-  }
-
-
-  test(){
-      this._PersonalService.getTest().subscribe(
-        response => {
-          console.log(response);
-        },
-        error => {
-          console.log(<any>error);
-        }
-
-    );
-
+    this.getPeronal();
   }
  
 
+  //Meto que recibe la peticion de prueba
   home(){
       this._PersonalService.homeService().subscribe(
         response => {
@@ -43,6 +33,21 @@ export class PersonalComponent implements OnInit {
           console.log(<any>error);
         }
       );
+  }
+
+
+  //Metodo que recibe el listado completo del personal de la base de datos para listarlo en la web
+  getPeronal(){
+    this._PersonalService.getPersonal().subscribe(
+      response => {
+        this.personal_activo = response.Personal;
+        this.peticion_succeful = true;
+        console.log(this.personal_activo);
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 
 }

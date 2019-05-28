@@ -1,17 +1,49 @@
 <!--Listado de personal activo guardado en la base de datos-->
 
-<h1> Listado de personal activo</h1>
-<hr>
+<h1>Listado de personal activo</h1>
+<br>
 
-<!--ciclo para listar los empleados-->
+<!--ciclo para listar los empleados activos-->
 
-<div class="list-group">
-	<a href="#" class="list-group-item list-group-item-action">
-	Cras justo odio
-	</a>
-	<a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-	<a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-	<a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-	<a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
-</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Cargo</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="peticion_succeful">
+  	<tr *ngFor="let empleado of personal_activo; let indice = index">
+		<th scope="row">{{indice}}</th>
+		<td><a href="#">{{empleado.name}}</a></td>
+		<td>{{empleado.surname}}</td>
+		<td>{{empleado.position}}</td>
+  	</tr>
+
+
+<!--
+    <tr>
+      <th scope="row">1</th>
+      <td><a href="#">Mark</a></td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr> 
+    -->
+  </tbody>
+</table>
+
 
