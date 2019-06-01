@@ -3,47 +3,28 @@
 <h1>Listado de personal activo</h1>
 <br>
 
-<!--ciclo para listar los empleados activos-->
+<!--Tabla de empleados activos-->
 
 <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido</th>
-      <th scope="col">Cargo</th>
-    </tr>
-  </thead>
-  <tbody *ngIf="peticion_succeful">
-  	<tr *ngFor="let empleado of personal_activo; let indice = index">
-		<th scope="row">{{indice}}</th>
-		<td><a href="#">{{empleado.name}}</a></td>
-		<td>{{empleado.surname}}</td>
-		<td>{{empleado.position}}</td>
-  	</tr>
+	<thead>
+		<!--Cabecera de tabla-->
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Apellido</th>
+			<th scope="col">Cargo</th>
+		</tr>
+	</thead>
 
-
-<!--
-    <tr>
-      <th scope="row">1</th>
-      <td><a href="#">Mark</a></td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr> 
-    -->
-  </tbody>
+		<!--Cuerpo de la tabla-->
+	<tbody *ngIf="peticion_succeful">
+		<tr *ngFor="let empleado of personal_activo; let indice = index">
+			<th scope="row">{{indice}}</th>
+			<td><a href="#">{{empleado.name}}</a></td>
+			<td>{{empleado.surname}}</td>
+			<td>{{empleado.position}}</td>
+		</tr>
+	</tbody>
 </table>
 
 

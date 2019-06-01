@@ -17,17 +17,24 @@ export class PersonalService {
   }
 
 
-  //Metodo de prueba
+  //Metodo de prueba.
   homeService(): Observable<any>{
     let Header = new HttpHeaders().set("Content-Type", "application/json");
     return this._http.get(this.url+"/home", {headers: Header});    // , {headers: Header}
   }
 
 
-  //Metodo para obtener todo el personal de la base de datos
+  //Metodo para obtener todo el personal de la base de datos.
   getPersonal(): Observable<any>{
     let headers = new HttpHeaders().set("Content-Type", "application/json");
     return this._http.get(this.url+"/personal", {headers: headers});
+  }
+
+  //Metodo para guardar un nuevo empleado en la base de datos.
+  saveEmployee(form): Observable<any>{
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+    let employee = JSON.stringify(form);
+    return this._http.post(this.url+"/empleado", employee, {headers: headers});
   }
 
 }
