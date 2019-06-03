@@ -50,5 +50,11 @@ export class PersonalService {
     return this._http.put(this.url+"/empleado/"+id, params, {headers:headers});
   }
 
+  //Metodo para eliminar un empleado de la base de datos.
+  deleteEmployee(id){
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this._http.delete(this.url+"/empleado/"+id, {headers: headers});
+  }
+
 }
  

@@ -60,5 +60,21 @@ export class EditComponent implements OnInit {
 		
 	}
 
+	//Metodo para confirmar y eliminar el registro
+	deleteEmployee(){
+		if(confirm("Esta seguro?")){
+			this._personalService.deleteEmployee(this.id).subscribe(
+				result => {
+					alert("Se ha eliminado el empleado satisfactoriamente");
+					return this._router.navigate(["/personal"]);
+				},
+				error => {
+					return console.log(<any>error);
+				}
+			);
+		}
+		
+	}
+
 }
 
