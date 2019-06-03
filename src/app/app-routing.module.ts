@@ -10,7 +10,6 @@ const routes: Routes = [
 	{path:"personal", component: PersonalComponent},
 	{path:"crear", component: CreateEmployeeComponent},
 	{path:"editar/:id", component: EditComponent}
-	//{path: "**", component: PersonalComponent}
 ];
 
 @NgModule({

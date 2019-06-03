@@ -13,7 +13,7 @@ export class CreateEmployeeComponent implements OnInit {
 	public success: number;
 
   constructor( private _personalService: PersonalService) {
-  	this.empleado = new Employee("", "", null, "", null);
+  	this.empleado = new Employee("","", "", null, "", null);
   	this.success = 0;
   }
 
@@ -24,7 +24,7 @@ export class CreateEmployeeComponent implements OnInit {
   onSubmit(form){
   	this._personalService.saveEmployee(this.empleado).subscribe(
   		result =>{
-  			console.log(result);
+  			//console.log(result);
   			this.success = 1;
   			},
   		error => {

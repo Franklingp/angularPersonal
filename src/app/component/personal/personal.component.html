@@ -13,6 +13,9 @@
 			<th scope="col">Nombre</th>
 			<th scope="col">Apellido</th>
 			<th scope="col">Cargo</th>
+			<th scope="col">Edad</th>
+			<th scope="col">Identificacion</th>
+
 		</tr>
 	</thead>
 
@@ -20,10 +23,12 @@
 	<tbody *ngIf="peticion_succeful">
 		<tr *ngFor="let empleado of personal_activo; let indice = index">
 			<th scope="row">{{indice}}</th>
-			<td><a href="#">{{empleado.name}}</a></td>
+			<td><a [routerLink]="['/editar', empleado._id]">{{empleado.name}}</a></td>
 			<td>{{empleado.surname}}</td>
 			<td>{{empleado.position}}</td>
-		</tr>
+			<td>{{empleado.age}}</td>
+			<td>{{empleado.identification}}</td>
+			</tr>
 	</tbody>
 </table>
 

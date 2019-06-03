@@ -37,5 +37,18 @@ export class PersonalService {
     return this._http.post(this.url+"/empleado", employee, {headers: headers});
   }
 
+  //Metodo para retornar un solo empleado de la base de datos.
+  getEmployee(id): Observable<any>{
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+    return this._http.get(this.url+'/empleado/'+id, {headers: headers});
+  }
+
+  //Metodo para actualizar los datos de un empleado.
+  updateEmployee(employee, id): Observable<any>{
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+    let params = JSON.stringify(employee);
+    return this._http.put(this.url+"/empleado/"+id, params, {headers:headers});
+  }
+
 }
  

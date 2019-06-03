@@ -27,7 +27,7 @@ export class PersonalComponent implements OnInit {
   home(){
       this._PersonalService.homeService().subscribe(
         response => {
-          console.log(response);
+          //console.log(response);
         },
         error => {
           console.log(<any>error);
@@ -42,7 +42,7 @@ export class PersonalComponent implements OnInit {
       response => {
         this.personal_activo = response.Personal;
         this.peticion_succeful = true;
-        console.log(this.personal_activo);
+        //console.log(this.personal_activo);
       },
       error => {
         console.log(<any>error);

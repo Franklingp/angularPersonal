@@ -1,3 +1,68 @@
-<p>
-  edit works!
-</p>
+<h1>Editar Empleado</h1>
+<hr>
+
+<!--Formulario para recoger los datos nuevos del empleado-->
+<form *ngIf="confirma_peticion" #employeeForm='ngForm' (ngSubmit)="onSubmit(employeeForm)">
+
+  <!--Mensaje de exito en caso de que haya guardado exitosamente el nuevo empleado
+    en la base de datos-->
+  <div class="alert alert-success" role="alert" *ngIf="success == 1">
+    El registro se a guardado satisfactoriamente, <a [routerLink]="['/personal']" class="alert-link">haga click aqui</a> para observar el nuevo listado.
+  </div>
+
+  <!--Mensaje de error en caso de que haya algun error al guardar el nuevo empleado-->
+  <div class="alert alert-danger" role="alert" *ngIf="success == -1">
+    No ha sido posible guardar el nuevo registro.
+  </div>
+
+
+  <!--Seccion para introducir el nombre-->
+  <div class="form-group">
+    <label for="nombre" class="margen">Nombre</label>
+    <input class="form-control"  name="nombre" type="text" placeholder="Nombre" #name="ngModel" [(ngModel)]="empleado.name" required>
+      <div class="alert alert-danger" role="alert" *ngIf="name.touched && !empleado.name">
+          El Nombre es requerido.
+      </div>
+  </div>
+
+  <!--Seccion para introducir el apellido-->
+  <div class="form-group">
+    <label for="apellido" class="margen">Apellido</label>
+    <input class="form-control" name="apellido" type="text" placeholder="Apellido" #surname="ngModel" [(ngModel)]="empleado.surname">
+    <div class="alert alert-danger" role="alert" *ngIf="surname.touched && !empleado.surname">
+          El Apellido es requerido.
+    </div>
+  </div>
+
+  <!--Seccion para introducir la edad-->
+  <div class="form-group">
+    <label for="edad" class="margen">Edad</label>
+    <input class="form-control" name="edad" type="number" placeholder="Edad" #age="ngModel" [(ngModel)]="empleado.age">
+    <div class="alert alert-danger" role="alert" *ngIf="age.touched && !empleado.age">
+          La Edad es requerida.
+     </div>
+  </div>
+
+  <!--Seccion para introducir el cargo-->
+   <div class="form-group">
+    <label for="cargo" class="margen">Cargo</label>
+    <input class="form-control" name="cargo" type="text" placeholder="Cargo" #position="ngModel" [(ngModel)]="empleado.position">
+    <div class="alert alert-danger" role="alert" *ngIf="position.touched && !empleado.position">
+          El Cargo es requerido.
+    </div>
+   </div>
+
+   <!--Seccion para introducir la identificacion-->
+  <div class="form-group">
+    <label for="identificacion" class="margen">Identificacion</label>
+    <input class="form-control" name="identificacion" type="number" placeholder="Identificacion" #identification="ngModel" [(ngModel)]="empleado.identification">
+    <div class="alert alert-danger" role="alert" *ngIf="identification.touched && !empleado.identification">
+          La Identificacion es requerida.
+    </div>
+  </div>
+
+  <!--Boton para guardar el nuevo empleado-->
+  <br>
+  <input class="btn btn-primary" type="submit" value="Guardar" [disabled]="!employeeForm.form.valid">
+
+</form>
