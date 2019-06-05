@@ -32,4 +32,6 @@
 	</tbody>
 </table>
 
-
+<div class="alert alert-warning" role="alert" *ngIf="numero_empleados == 0">
+		No hay ningun empleado registrado en la base de datos <a [routerLink]="['/crear']" class="alert-link">precione aqui </a>para agregar nuevo empleados a la base de datos.
+</div>

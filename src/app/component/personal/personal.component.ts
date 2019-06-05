@@ -11,6 +11,7 @@ import { Employee } from '../../models/employee';
 export class PersonalComponent implements OnInit {
 	public personal_activo: Employee[];
   public peticion_succeful: boolean;
+  public numero_empleados: number;
 
   constructor( private _PersonalService: PersonalService ){ 
     this.peticion_succeful = false;
@@ -42,7 +43,11 @@ export class PersonalComponent implements OnInit {
       response => {
         this.personal_activo = response.Personal;
         this.peticion_succeful = true;
-        //console.log(this.personal_activo);
+        console.log(this.personal_activo);
+
+        this.numero_empleados = this.personal_activo.length;
+        console.log(this.numero_empleados);
+
       },
       error => {
         console.log(<any>error);
