@@ -30,7 +30,7 @@
   <!--Seccion para introducir el apellido-->
   <div class="form-group">
     <label for="apellido" class="margen">Apellido</label>
-    <input class="form-control" name="apellido" type="text" placeholder="Apellido" #surname="ngModel" [(ngModel)]="empleado.surname">
+    <input class="form-control" name="apellido" type="text" placeholder="Apellido" #surname="ngModel" [(ngModel)]="empleado.surname" required>
     <div class="alert alert-danger" role="alert" *ngIf="surname.touched && !empleado.surname">
           El Apellido es requerido.
     </div>
@@ -39,7 +39,7 @@
   <!--Seccion para introducir la edad-->
   <div class="form-group">
     <label for="edad" class="margen">Edad</label>
-    <input class="form-control" name="edad" type="number" placeholder="Edad" #age="ngModel" [(ngModel)]="empleado.age">
+    <input class="form-control" name="edad" type="number" placeholder="Edad" #age="ngModel" [(ngModel)]="empleado.age" required>
     <div class="alert alert-danger" role="alert" *ngIf="age.touched && !empleado.age">
           La Edad es requerida.
      </div>
@@ -48,7 +48,7 @@
   <!--Seccion para introducir el cargo-->
    <div class="form-group">
     <label for="cargo" class="margen">Cargo</label>
-    <input class="form-control" name="cargo" type="text" placeholder="Cargo" #position="ngModel" [(ngModel)]="empleado.position">
+    <input class="form-control" name="cargo" type="text" placeholder="Cargo" #position="ngModel" [(ngModel)]="empleado.position" required>
     <div class="alert alert-danger" role="alert" *ngIf="position.touched && !empleado.position">
           El Cargo es requerido.
     </div>
@@ -57,7 +57,7 @@
    <!--Seccion para introducir la identificacion-->
   <div class="form-group">
     <label for="identificacion" class="margen">Identificacion</label>
-    <input class="form-control" name="identificacion" type="number" placeholder="Identificacion" #identification="ngModel" [(ngModel)]="empleado.identification">
+    <input class="form-control" name="identificacion" type="number" placeholder="Identificacion" #identification="ngModel" [(ngModel)]="empleado.identification" required>
     <div class="alert alert-danger" role="alert" *ngIf="identification.touched && !empleado.identification">
           La Identificacion es requerida.
     </div>
