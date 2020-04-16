@@ -1,6 +1,6 @@
 # Angular Personal
 
-Angular personal es un CRUD es un proyecto secillo que consiste en la un sistema capaz de crear, visualizar, editar y eliminar datos, en este caso datos de un empleado. Estos datos que se gestionan en este cliente se guardan en un backend ( Que es un servicio aparte que puedes ver aqui [Link](https://github.com/Franklingp/backendPersonal)).
+Angular personal es un CRUD, un proyecto secillo que consiste en un sistema capaz de crear, visualizar, editar y eliminar datos, en este caso datos de un empleado. Estos datos que se gestionan en este cliente se guardan en un backend ( Que es un servicio aparte que puedes ver aqui [Link](https://github.com/Franklingp/backendPersonal)).
  
 ### Pre-requisitos 📋
 
